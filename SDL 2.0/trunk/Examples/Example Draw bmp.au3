@@ -12,11 +12,9 @@
 
 #ce ----------------------------------------------------------------------------
 
-#include "SDL.au3"
+#include "ExampleCommons.au3"
 
-Local $sDll = @ScriptDir & "\SDL.dll"
-If @AutoItX64 Then $sDll = @ScriptDir & "\SDL_x64.dll"
-_SDL_Init($_SDL_INIT_VIDEO, $sDll)
+_SDL_Init($_SDL_INIT_VIDEO, _DllFile())
 
 Global $apWindow[2]
 $apWindow[0] = _SDL_CreateWindow(StringTrimRight(@ScriptName, 4), 0, 0, 256, 256, $_SDL_WINDOW_SHOWN)
