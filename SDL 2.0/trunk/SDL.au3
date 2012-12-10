@@ -87,7 +87,7 @@ extern DECLSPEC int SDLCALL SDL_InitSubSystem(Uint32 flags);
 #ce
 Func _SDL_InitSubSystem($iFlags)
 	Local $aCall = DllCall($__SDL_DLL, "int:cdecl", "SDL_InitSubSystem", "uint", $iFlags)
-	If @error Then Return SetError(2, @error, -1)
+	If @error Then Return SetError(1, @error, -1)
 	Return $aCall[0]
 EndFunc
 
