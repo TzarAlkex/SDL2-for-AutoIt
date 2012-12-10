@@ -10,8 +10,7 @@
 ; Title .........: SDL (Simple DirectMedia Layer)
 ; AutoIt Version : To be decided (3.3.8.1 works for now)
 ; Description ...: Simple DirectMedia Layer is a cross-platform multimedia library.
-; Author(s) .....: Team Alpha Super Awesome Cool Dynamite Wolf Squadron
-; Actual author .: Alexander Samuelsson (AdmiralAlkex)
+; Author(s) .....: Alexander Samuelsson (AdmiralAlkex)
 ; Dll ...........: SDL.dll
 ; ===============================================================================================================================
 
