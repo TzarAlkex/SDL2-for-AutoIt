@@ -5,7 +5,7 @@
 #cs ----------------------------------------------------------------------------
 
  AutoIt Version: 3.3.8.1 (stable)
- Author:         myName
+ Author:         Team Alpha Super Awesome Cool Dynamite Wolf Squadron
 
  Script Function:
 	Template AutoIt script.
