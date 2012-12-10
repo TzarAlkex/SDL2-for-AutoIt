@@ -5,7 +5,7 @@
 #cs ----------------------------------------------------------------------------
 
  AutoIt Version: 3.3.8.1 (stable)
- Author:         Team Alpha Super Awesome Cool Dynamite Wolf Squadron (only consists of AdmiralAlkex as of writing)
+ Author:         Alexander Samuelsson (AdmiralAlkex)
 
  Script Function:
 	Template AutoIt script.
