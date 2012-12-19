@@ -194,7 +194,7 @@ EndFunc
 extern DECLSPEC SDL_LogPriority SDLCALL SDL_LogGetPriority(int category);
 #ce
 Func _SDL_LogGetPriority($iCategory)
-	DllCall($__SDL_DLL, "int:cdecl", "SDL_LogGetPriority", "int", $iCategory)
+	Local $aCall = DllCall($__SDL_DLL, "int:cdecl", "SDL_LogGetPriority", "int", $iCategory)
 	If @error Then Return SetError(1, @error, -1)
 	Return $aCall[0]
 EndFunc
