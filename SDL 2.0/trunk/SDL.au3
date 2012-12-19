@@ -19,6 +19,7 @@ Global $__SDL_DLL = -1
 ; ===============================================================================================================================
 
 ; #CURRENT# =====================================================================================================================
+
 ;Initialization and Shutdown
 ;_SDL_Init
 ;_SDL_InitSubSystem
@@ -30,6 +31,9 @@ Global $__SDL_DLL = -1
 ;_SDL_ClearError
 ;_SDL_GetError
 ;_SDL_SetError
+
+;Log Handling
+;_SDL_LogSetAllPriority
 
 ;Display and Window Management
 ;_SDL_CreateWindow
@@ -155,6 +159,19 @@ extern DECLSPEC void SDLCALL SDL_SetError(const char *fmt, ...);
 #ce
 Func _SDL_SetError($sMessage)
 	DllCall($__SDL_DLL, "none:cdecl", "SDL_SetError", "str", $sMessage)
+	If @error Then Return SetError(1, @error, -1)
+EndFunc
+#endregion
+
+#region Log Handling
+#cs
+/**
+ *  \brief Set the priority of all log categories
+ */
+extern DECLSPEC void SDLCALL SDL_LogSetAllPriority(SDL_LogPriority priority);
+#ce
+Func _SDL_LogSetAllPriority($iPriority)
+	DllCall($__SDL_DLL, "none:cdecl", "SDL_LogSetAllPriority", "str", $sMessage)
 	If @error Then Return SetError(1, @error, -1)
 EndFunc
 #endregion
