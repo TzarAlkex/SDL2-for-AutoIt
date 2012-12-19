@@ -171,7 +171,44 @@ EndFunc
 extern DECLSPEC void SDLCALL SDL_LogSetAllPriority(SDL_LogPriority priority);
 #ce
 Func _SDL_LogSetAllPriority($iPriority)
-	DllCall($__SDL_DLL, "none:cdecl", "SDL_LogSetAllPriority", "str", $sMessage)
+	DllCall($__SDL_DLL, "none:cdecl", "SDL_LogSetAllPriority", "int", $iPriority)
+	If @error Then Return SetError(1, @error, -1)
+EndFunc
+
+#cs
+/**
+ *  \brief Set the priority of a particular log category
+ */
+extern DECLSPEC void SDLCALL SDL_LogSetPriority(int category,
+                                                SDL_LogPriority priority);
+#ce
+Func _SDL_LogSetPriority($iCategory, $iPriority)
+	DllCall($__SDL_DLL, "none:cdecl", "SDL_LogSetPriority", "int", $iCategory, "int", $iPriority)
+	If @error Then Return SetError(1, @error, -1)
+EndFunc
+
+#cs
+/**
+ *  \brief Get the priority of a particular log category
+ */
+extern DECLSPEC SDL_LogPriority SDLCALL SDL_LogGetPriority(int category);
+#ce
+Func _SDL_LogGetPriority($iCategory)
+	DllCall($__SDL_DLL, "int:cdecl", "SDL_LogGetPriority", "int", $iCategory)
+	If @error Then Return SetError(1, @error, -1)
+	Return $aCall[0]
+EndFunc
+
+#cs
+/**
+ *  \brief Reset all priorities to default.
+ *
+ *  \note This is called in SDL_Quit().
+ */
+extern DECLSPEC void SDLCALL SDL_LogResetPriorities(void);
+#ce
+Func _SDL_LogResetPriorities()
+	DllCall($__SDL_DLL, "none:cdecl", "SDL_LogResetPriorities")
 	If @error Then Return SetError(1, @error, -1)
 EndFunc
 #endregion
