@@ -27,6 +27,48 @@ Global Const $_SDL_INIT_EVERYTHING					= 0x0000FFFF	;All of the above
 Global Const $_SDL_INIT_NOPARACHUTE					= 0x00100000	;Prevents SDL from catching fatal signals
 #endregion
 
+#region Log Handling
+#cs
+/**
+ *  \brief The predefined log categories
+ *
+ *  By default the application category is enabled at the INFO level,
+ *  and all other categories are enabled at the CRITICAL level.
+ */
+#ce
+Global Enum $_SDL_LOG_CATEGORY_APPLICATION, _
+	$_SDL_LOG_CATEGORY_ERROR, _
+	$_SDL_LOG_CATEGORY_SYSTEM, _
+	$_SDL_LOG_CATEGORY_AUDIO, _
+	$_SDL_LOG_CATEGORY_VIDEO, _
+	$_SDL_LOG_CATEGORY_RENDER, _
+	$_SDL_LOG_CATEGORY_INPUT, _
+	$_SDL_LOG_CATEGORY_RESERVED1, _
+	$_SDL_LOG_CATEGORY_RESERVED2, _
+	$_SDL_LOG_CATEGORY_RESERVED3, _
+	$_SDL_LOG_CATEGORY_RESERVED4, _
+	$_SDL_LOG_CATEGORY_RESERVED5, _
+	$_SDL_LOG_CATEGORY_RESERVED6, _
+	$_SDL_LOG_CATEGORY_RESERVED7, _
+	$_SDL_LOG_CATEGORY_RESERVED8, _
+	$_SDL_LOG_CATEGORY_RESERVED9, _
+	$_SDL_LOG_CATEGORY_RESERVED10, _
+	$_SDL_LOG_CATEGORY_CUSTOM
+
+#cs
+/**
+ *  \brief The predefined log priorities
+ */
+#ce
+Global Enum $_SDL_LOG_PRIORITY_VERBOSE = 1, _
+	$_SDL_LOG_PRIORITY_DEBUG, _
+	$_SDL_LOG_PRIORITY_INFO, _
+	$_SDL_LOG_PRIORITY_WARN, _
+	$_SDL_LOG_PRIORITY_ERROR, _
+	$_SDL_LOG_PRIORITY_CRITICAL, _
+	$_SDL_NUM_LOG_PRIORITIES
+#endregion
+
 #region Display and Window Management
 #cs
 /**
