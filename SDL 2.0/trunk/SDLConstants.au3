@@ -69,6 +69,18 @@ Global Enum $_SDL_LOG_PRIORITY_VERBOSE = 1, _
 	$_SDL_NUM_LOG_PRIORITIES
 #endregion
 
+#region Querying SDL Version
+#cs
+typedef struct SDL_version
+{
+    Uint8 major;        /**< major version */
+    Uint8 minor;        /**< minor version */
+    Uint8 patch;        /**< update version */
+} SDL_version;
+#ce
+Global Const $tagSDL_version = "ubyte major;ubyte minor;ubyte patch"
+#endregion
+
 #region Display and Window Management
 #cs
 /**
