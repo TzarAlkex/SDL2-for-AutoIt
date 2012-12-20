@@ -79,6 +79,10 @@ typedef struct SDL_version
 } SDL_version;
 #ce
 Global Const $tagSDL_version = "ubyte major;ubyte minor;ubyte patch"
+
+Global Const $_SDL_MAJOR_VERSION					= 2
+Global Const $_SDL_MINOR_VERSION					= 0
+Global Const $_SDL_PATCHLEVEL						= 0
 #endregion
 
 #region Display and Window Management
