@@ -104,6 +104,13 @@ Global Const $_SDL_RENDERER_TARGETTEXTURE			= 0x00000008	;The renderer supports 
 #endregion
 
 #region Rectangle Functions
-Global Const $tagSDL_Rect = "int;int;int;int"
+#cs
+typedef struct SDL_Rect
+{
+    int x, y;
+    int w, h;
+} SDL_Rect;
+#ce
+Global Const $tagSDL_Rect = "int x;int y;int w;int h"
 #endregion
 ; ===============================================================================================================================
